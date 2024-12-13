@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f9;
+            color: #333;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+        h1 {
+            color: #4CAF50;
+        }
+        p {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        .candidate {
+            margin: 20px 0;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .candidate:last-child {
+            border-bottom: none;
+        }
+        a {
+            display: inline-block;
+            margin-top: 10px;
+            text-decoration: none;
+            background-color: #4CAF50;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.9em;
+        }
+        a:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Prediction Results</h1>
+        {% for candidate in top_candidates %}
+        <div class="candidate">
+            <h2>{{ loop.index }}. {{ candidate.name }}</h2>
+            <p>Probability: {{ "%.2f" | format(candidate.probability * 100) }}%</p>
+            {% if candidate.details.title == "Not added yet" %}
+                <p><em>Details not added yet</em></p>
+                <img src="https://via.placeholder.com/300?text=No+Image" alt="Placeholder Image">
+            {% else %}
+                <p><strong>Title:</strong> {{ candidate.details.title }}</p>
+                <a href="{{ candidate.details.details_url }}" target="_blank">View on MyAnimeList</a>
+                <br>
+                <img src="{{ candidate.details.image_url }}" alt="{{ candidate.name }}">
+            {% endif %}
+        </div>
+        {% endfor %}
+        <a href="/">Go Back to Upload Page</a>
+    </div>
+</body>
+</html>
