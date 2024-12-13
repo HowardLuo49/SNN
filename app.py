@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify, render_template, url_for
 from werkzeug.utils import secure_filename
 import tensorflow as tf
-# from PIL import Image
+from PIL import Image
 import numpy as np
 import os
 import requests
