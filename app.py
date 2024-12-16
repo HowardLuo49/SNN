@@ -1,21 +1,63 @@
-from flask import Flask, request, jsonify, render_template, url_for
+from flask import Flask, request, render_template, redirect, url_for
 from werkzeug.utils import secure_filename
+from shlex import quote
 import tensorflow as tf
 from PIL import Image
 import numpy as np
 import os
 import requests
+import random
 
 # Initialize Flask app
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'uploads'
 
 # Load the trained model
-model = tf.keras.models.load_model("models/test_model_5.h5")
+model = tf.keras.models.load_model("models/epoch-05_189.keras")
 
 # Define image dimensions
 IMG_HEIGHT = 360
 IMG_WIDTH = 640
+
+with open("static/titles.txt", "r") as file:
+    titles_list = [line.strip() for line in file if line.strip()]
+
+@app.route('/play', methods=['GET'])
+def play():
+    # Randomly select an anime and an image
+    anime = random.choice(titles_list)
+    sample_frames_dir = os.path.join(app.static_folder, "sample_frames")
+    anime_dir = os.path.join(sample_frames_dir, anime)
+    print(f"Anime directory path: {anime_dir}")
+    image_file = random.choice(os.listdir(anime_dir))
+    image_path = f"sample_frames/{anime}/{image_file}"
+
+    cleaned_titles_list = [title[:-2] for title in titles_list]
+    
+    # Render the play page
+    return render_template('play.html', image_path=image_path, titles_list=cleaned_titles_list, correct_title=anime[:-2])
+
+@app.route('/play/result', methods=['POST'])
+def play_result():
+    # Get form data
+    user_guess = request.form.get('user_guess')
+    correct_title = request.form.get('correct_title')
+    image_path = request.form.get('image_path')
+
+    # Run the neural network on the image
+    full_image_path = os.path.join(app.root_path, "static", image_path)
+    input_data = preprocess_image(full_image_path)
+    predictions = model.predict(input_data)[0]  # Flatten the predictions
+    predicted_index = np.argmax(predictions)
+    nn_guess = titles_list[predicted_index][:-2]
+
+    # Determine outcomes
+    user_correct = user_guess == correct_title
+    nn_correct = nn_guess == correct_title
+
+    # Render the result page
+    return render_template('game_result.html', image_path=image_path, user_correct=user_correct,
+                           nn_correct=nn_correct, correct_title=correct_title, user_guess=user_guess, nn_guess=nn_guess)
 
 def preprocess_image(image_path):
     # Open the image file
@@ -103,7 +145,10 @@ def upload():
             titles_list = [line.strip() for line in file if line.strip()]
 
         candidate_file = titles_list[idx]
-        candidate_name = os.path.splitext(candidate_file)[0]  # Remove file extension
+        
+        # candidate_name = os.path.splitext(candidate_file)[0]  # Remove file extension
+        candidate_name = titles_list[idx]
+
         probability = predictions[idx]
         anime_details = fetch_anime_details(candidate_name)  # Fetch details from MAL
         top_candidates.append({

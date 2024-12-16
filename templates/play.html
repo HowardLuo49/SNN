@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f9;
+            color: #333;
+            padding: 20px;
+        }
+        img {
+            max-width: 80%;
+            height: auto;
+            margin: 20px 0;
+        }
+        select, button {
+            font-size: 1.2em;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Guess the Anime</h1>
+    <img src="{{ url_for('static', filename=image_path) }}" alt="Sample Frame" style="width: 1000px; height: auto;">
+    <form action="{{ url_for('play_result') }}" method="POST">
+        <input type="hidden" name="image_path" value="{{ image_path }}">
+        <input type="hidden" name="correct_title" value="{{ correct_title }}">
+        <label for="user_guess">Choose the anime:</label>
+        <select id="user_guess" name="user_guess" required>
+            {% for title in titles_list %}
+            <option value="{{ title }}">{{ title }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <button type="submit">Submit Guess</button>
+    </form>
+    <br>
+    <a href="/">Go Back to Home</a>
+</body>
+</html>
