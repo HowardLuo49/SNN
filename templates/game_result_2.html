@@ -14,14 +14,9 @@
             color: #333;
             padding: 20px;
         }
-        img {
-            max-width: 80%;
-            height: auto;
-            margin: 20px 0;
-        }
         .result {
             font-size: 1.5em;
-            margin: 20px 0;
+            margin-bottom: 20px;
         }
         a {
             display: inline-block;
@@ -40,15 +35,10 @@
 </head>
 <body>
     <h1>Game Result</h1>
-    <img src="{{ url_for('static', filename=image_path) }}" alt="Sample Frame" style="width: 1000px; height: auto;">
     <div class="result">
-        <p><strong>Correct Answer:</strong> {{ correct_title }}</p>
-        <p><strong>Your Guess:</strong> {{ user_guess }}</p>
-        <p><strong>Neural Network's Guess:</strong> {{ nn_guess }}</p>
-        <p><strong>You were {{ 'correct' if user_correct else 'wrong' }}</strong></p>
-        <p><strong>The Neural Network was {{ 'correct' if nn_correct else 'wrong' }}</strong></p>
+        <p>You completed the game in <strong>{{ time_taken }}</strong> seconds!</p>
     </div>
-    <a href="{{ url_for('play') }}">Play Again</a>
+    <a href="/play_2">Play Again</a>
     <a href="/">Go Back to Home</a>
 </body>
 </html>

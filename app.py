@@ -22,8 +22,32 @@ IMG_WIDTH = 640
 with open("static/titles.txt", "r") as file:
     titles_list = [line.strip() for line in file if line.strip()]
 
-@app.route('/play', methods=['GET'])
-def play():
+@app.route('/play_2', methods=['GET'])
+def play_2():
+    sample_frames_dir = os.path.join(app.root_path, "static/sample_frames")
+
+    # Select 6 distinct anime
+    anime_folders = random.sample(os.listdir(sample_frames_dir), 6)
+
+    # Select one image pair from each anime
+    grid_images = []
+    for anime in anime_folders:
+        anime_dir = os.path.join(sample_frames_dir, anime)
+        selected_images = random.sample(os.listdir(anime_dir), 2)  # Select 2 images
+        grid_images.extend([f"sample_frames/{anime}/{img}" for img in selected_images])
+
+    # Shuffle the grid
+    random.shuffle(grid_images)
+
+    return render_template('play_2.html', grid_images=grid_images)
+
+@app.route('/play_2/result', methods=['GET'])
+def play_2_result():
+    time_taken = request.args.get('time', 0)
+    return render_template('game_result_2.html', time_taken=time_taken)
+
+@app.route('/play_1', methods=['GET'])
+def play_1():
     # Randomly select an anime and an image
     anime = random.choice(titles_list)
     sample_frames_dir = os.path.join(app.static_folder, "sample_frames")
@@ -35,10 +59,10 @@ def play():
     cleaned_titles_list = [title[:-2] for title in titles_list]
     
     # Render the play page
-    return render_template('play.html', image_path=image_path, titles_list=cleaned_titles_list, correct_title=anime[:-2])
+    return render_template('play_1.html', image_path=image_path, titles_list=cleaned_titles_list, correct_title=anime[:-2])
 
-@app.route('/play/result', methods=['POST'])
-def play_result():
+@app.route('/play_1/result_1', methods=['POST'])
+def play_result_1():
     # Get form data
     user_guess = request.form.get('user_guess')
     correct_title = request.form.get('correct_title')
@@ -56,7 +80,7 @@ def play_result():
     nn_correct = nn_guess == correct_title
 
     # Render the result page
-    return render_template('game_result.html', image_path=image_path, user_correct=user_correct,
+    return render_template('game_result_1.html', image_path=image_path, user_correct=user_correct,
                            nn_correct=nn_correct, correct_title=correct_title, user_guess=user_guess, nn_guess=nn_guess)
 
 def preprocess_image(image_path):
