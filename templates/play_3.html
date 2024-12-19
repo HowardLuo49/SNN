@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Frame</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f9;
+            color: #333;
+            padding: 20px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 columns for 6 frames */
+            gap: 20px;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        .frame {
+            width: 100%;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            border: 2px solid transparent;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .frame:hover {
+            transform: scale(1.05);
+        }
+        .frame.selected {
+            border: 2px solid #4CAF50; /* Highlight selected frame */
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: white;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Guess the Frame</h1>
+    <p>Anime Title: <strong>{{ correct_title }}</strong></p>
+    
+    <form action="/play_3/result" method="POST" onsubmit="return validateSelection();">
+        <div class="grid">
+            {% for frame in frames %}
+            <label>
+                <input type="radio" name="selected_frame" value="{{ frame }}" onchange="updateSelection(this)" hidden>
+                <img src="{{ url_for('static', filename=frame) }}" alt="Frame" class="frame">
+                <!-- Add a hidden input for each frame -->
+                <input type="hidden" name="frames" value="{{ frame }}">
+            </label>
+            {% endfor %}
+        </div>
+        <input type="hidden" name="correct_title" value="{{ correct_title }}">
+        <button type="submit">Submit</button>
+    </form>    
+
+    <script>
+        function validateSelection() {
+            // Check if any radio button is selected
+            const selectedFrame = document.querySelector('input[name="selected_frame"]:checked');
+            if (!selectedFrame) {
+                alert("Please select a frame before submitting.");
+                return false; // Prevent form submission
+            }
+            return true; // Allow form submission
+        }
+
+        // Keep track of the selected frame and highlight it
+        function updateSelection(input) {
+            // Deselect any previously selected frames
+            const allFrames = document.querySelectorAll('.frame');
+            allFrames.forEach(frame => frame.classList.remove('selected'));
+
+            // Highlight the newly selected frame
+            const img = input.nextElementSibling; // Image sibling of the radio input
+            img.classList.add('selected');
+        }
+    </script>
+</body>
+</html>

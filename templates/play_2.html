@@ -16,14 +16,18 @@
         }
         .grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr); /* 4 columns for a 3x4 grid */
+            grid-template-columns: repeat(4, 1fr); /* 4 columns */
             gap: 10px;
-            max-width: 600px;
-            margin: 20px auto;
+            max-width: 1300px; /* 4 cards at 320px each, plus gaps */
+            margin: 0 auto; /* Centers the grid horizontally */
+            position: absolute;
+            top: 60%; /* Move the grid's top edge to the vertical center */
+            left: 50%; /* Move the grid's left edge to the horizontal center */
+            transform: translate(-50%, -50%); /* Offset the grid to center it perfectly */
         }
         .card {
-            width: 160px; /* Match IMG_WIDTH */
-            height: 90px; /* Match IMG_HEIGHT */
+            width: 320px; /* Match IMG_WIDTH */
+            height: 180px; /* Match IMG_HEIGHT */
             position: relative;
             border: 2px solid #ccc;
             border-radius: 10px;
@@ -33,8 +37,8 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: 160px; /* Set width to IMG_WIDTH */
-            height: 90px; /* Set height to IMG_HEIGHT */
+            width: 320px; /* Set width to IMG_WIDTH */
+            height: 180px; /* Set height to IMG_HEIGHT */
             object-fit: cover;
             border-radius: 8px;
         }

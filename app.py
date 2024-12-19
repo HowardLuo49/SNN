@@ -10,6 +10,11 @@ import random
 
 # Initialize Flask app
 app = Flask(__name__)
+
+@app.errorhandler(Exception)
+def handle_exception(error):
+    return render_template('error_generic.html', error_message=str(error)), 500
+
 app.config['UPLOAD_FOLDER'] = 'uploads'
 
 # Load the trained model
@@ -21,6 +26,71 @@ IMG_WIDTH = 640
 
 with open("static/titles.txt", "r") as file:
     titles_list = [line.strip() for line in file if line.strip()]
+
+
+@app.route('/play_3/result', methods=['POST'])
+def play_3_result():
+    # Get data from the form
+    selected_frame = request.form.get('selected_frame')  # User's selected frame
+    correct_title = request.form.get('correct_title')    # Correct anime title
+    frames = request.form.getlist('frames')             # All frame paths
+
+    # Determine the correct frame (no need to adjust paths for this comparison)
+    correct_frame = next((frame for frame in frames if correct_title in frame), None)
+
+    # Neural network's prediction
+    frame_probabilities = []
+    for frame in frames:
+        # Preprocess each frame
+        frame_path = os.path.join(app.root_path, 'static', frame)  # Ensure correct path
+        input_data = preprocess_image(frame_path)
+        prediction = model.predict(input_data)[0]
+        title_index = titles_list.index(correct_title)
+        frame_probabilities.append((frame, prediction[title_index]))
+
+    # Find the frame with the highest probability
+    neural_network_prediction = max(frame_probabilities, key=lambda x: x[1])[0]
+
+    # No need to modify the paths here as they are already relative to 'static/'
+    return render_template(
+        'game_result_3.html',
+        correct_title=correct_title,
+        correct_frame=correct_frame,
+        selected_frame=selected_frame,
+        nn_frame=neural_network_prediction,
+        user_correct=(selected_frame == correct_frame),
+        nn_correct=(neural_network_prediction == correct_frame)
+    )
+
+@app.route('/play_3', methods=['GET'])
+def play_3():
+    sample_frames_dir = os.path.join(app.root_path, "static/sample_frames")
+
+    # Load the list of titles from `titles.txt`
+    titles_file = "static/titles.txt"
+    with open(titles_file, "r") as file:
+        titles_list = [line.strip() for line in file if line.strip()]
+
+    # Select a random anime title
+    correct_title = random.choice(titles_list)
+
+    # Find a correct frame for the selected title
+    correct_dir = os.path.join(sample_frames_dir, correct_title)
+    correct_frame = random.choice(os.listdir(correct_dir))
+
+    # Select 5 incorrect frames from other titles
+    incorrect_titles = [title for title in titles_list if title != correct_title]
+    incorrect_frames = []
+    for title in random.sample(incorrect_titles, 5):
+        incorrect_dir = os.path.join(sample_frames_dir, title)
+        incorrect_frame = random.choice(os.listdir(incorrect_dir))
+        incorrect_frames.append(f"sample_frames/{title}/{incorrect_frame}")
+
+    # Combine correct frame and incorrect frames, then shuffle
+    all_frames = [f"sample_frames/{correct_title}/{correct_frame}"] + incorrect_frames
+    random.shuffle(all_frames)
+
+    return render_template('play_3.html', correct_title=correct_title, frames=all_frames)
 
 @app.route('/play_2', methods=['GET'])
 def play_2():
@@ -142,7 +212,7 @@ def fetch_anime_details(title):
 @app.route('/upload', methods=['POST'])
 def upload():
     if 'file' not in request.files or request.files['file'].filename == '':
-        return render_template('error.html', message="No file selected. Please choose a file to upload.")
+        return render_template('error_upload.html', message="No file selected. Please choose a file to upload.")
 
     # Save uploaded file
     file = request.files['file']
@@ -192,4 +262,4 @@ def upload():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run( host="0.0.0.0", port=8080, debug=True)
