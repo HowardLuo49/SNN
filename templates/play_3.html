@@ -8,7 +8,9 @@
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            background-color: #f4f4f9;
+            /* background-color: #f4f4f9; */
+            background: url('/static/site_images/background.jpg') no-repeat center center fixed;
+            background-size: cover;
             color: #333;
             padding: 20px;
         }
@@ -47,6 +49,12 @@
         button:hover {
             background-color: #45a049;
         }
+        .quit {
+            background-color: #f44336; /* Red color for quit */
+        }
+        .quit:hover {
+            background-color: #d32f2f;
+        }
     </style>
 </head>
 <body>
@@ -68,7 +76,16 @@
         <button type="submit">Submit</button>
     </form>    
 
+    <div class="controls">
+        <button onclick="quitGame()" class="quit">Quit Game</button>
+    </div>
+
     <script>
+        // Quit Game
+        function quitGame() {
+            window.location.href = '/';
+        }
+
         function validateSelection() {
             // Check if any radio button is selected
             const selectedFrame = document.querySelector('input[name="selected_frame"]:checked');

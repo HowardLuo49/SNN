@@ -36,6 +36,26 @@
         a:hover {
             background-color: #45a049;
         }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin: 10px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .quit {
+            background-color: #f44336; /* Red color for quit */
+        }
+        .quit:hover {
+            background-color: #d32f2f;
+        }
     </style>
 </head>
 <body>
@@ -49,6 +69,16 @@
         <p><strong>The Neural Network was {{ 'correct' if nn_correct else 'wrong' }}</strong></p>
     </div>
     <a href="{{ url_for('play_1') }}">Play Again</a>
-    <a href="/">Go Back to Home</a>
+
+    <div class="controls">
+        <button onclick="quitGame()" class="quit">Quit Game</button>
+    </div>
+
+    <script>
+        // Quit Game
+        function quitGame() {
+            window.location.href = '/';
+        }
+    </script>
 </body>
 </html>
