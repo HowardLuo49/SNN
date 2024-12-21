@@ -7,9 +7,16 @@ import numpy as np
 import os
 import requests
 import random
+import logging
 
 # Initialize Flask app
 app = Flask(__name__)
+
+logging.basicConfig(
+    filename='access.log',          # Log file name
+    level=logging.INFO,             # Log level
+    format='%(asctime)s %(message)s' # Log format
+)
 
 @app.errorhandler(Exception)
 def handle_exception(error):
@@ -122,7 +129,7 @@ def play_1():
     anime = random.choice(titles_list)
     sample_frames_dir = os.path.join(app.static_folder, "sample_frames")
     anime_dir = os.path.join(sample_frames_dir, anime)
-    print(f"Anime directory path: {anime_dir}")
+    # print(f"Anime directory path: {anime_dir}")
     image_file = random.choice(os.listdir(anime_dir))
     image_path = f"sample_frames/{anime}/{image_file}"
 
@@ -253,11 +260,21 @@ def upload():
         })
 
     # Optional: Clean up uploaded file
-    os.remove(filepath)
+    # os.remove(filepath)
 
     # Render the template and pass the top 5 candidates
     return render_template('result.html', top_candidates=top_candidates)
 
+@app.before_request
+def log_request_info():
+    # Gather client information
+    ip_address = request.remote_addr
+    url = request.url
+    method = request.method
+    user_agent = request.headers.get('User-Agent')
+    
+    # Log the access details
+    logging.info(f"IP: {ip_address}, Method: {method}, URL: {url}, User-Agent: {user_agent}")
 
 
 

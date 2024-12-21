@@ -1,0 +1,32 @@
+2024-12-20 11:44:26,223 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.74.14.231:8080
+2024-12-20 11:44:26,224 [33mPress CTRL+C to quit[0m
+2024-12-20 11:44:26,225  * Restarting with stat
+2024-12-20 11:44:32,473  * Debugger is active!
+2024-12-20 11:44:32,476  * Debugger PIN: 849-586-795
+2024-12-20 11:44:32,485 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-20 11:44:32,488 127.0.0.1 - - [20/Dec/2024 11:44:32] "GET / HTTP/1.1" 200 -
+2024-12-20 11:44:32,505 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/static/site_images/Levi.png, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-20 11:44:32,508 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/static/site_images/background.jpg, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-20 11:44:32,731 127.0.0.1 - - [20/Dec/2024 11:44:32] "[36mGET /static/site_images/background.jpg HTTP/1.1[0m" 304 -
+2024-12-20 11:44:32,731 127.0.0.1 - - [20/Dec/2024 11:44:32] "[36mGET /static/site_images/Levi.png HTTP/1.1[0m" 304 -
+2024-12-20 11:44:50,346 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-20 11:44:50,347 127.0.0.1 - - [20/Dec/2024 11:44:50] "GET / HTTP/1.1" 200 -
+2024-12-20 11:44:50,366 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/static/site_images/Levi.png, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-20 11:44:50,368 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/static/site_images/background.jpg, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-20 11:44:50,369 127.0.0.1 - - [20/Dec/2024 11:44:50] "[36mGET /static/site_images/Levi.png HTTP/1.1[0m" 304 -
+2024-12-20 11:44:50,369 127.0.0.1 - - [20/Dec/2024 11:44:50] "[36mGET /static/site_images/background.jpg HTTP/1.1[0m" 304 -
+2024-12-20 11:44:53,073 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/play_1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-20 11:44:53,079 127.0.0.1 - - [20/Dec/2024 11:44:53] "GET /play_1 HTTP/1.1" 200 -
+2024-12-20 11:44:53,097 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/static/sample_frames/A%20Couple%20of%20Cuckoos%201/877.jpg, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-20 11:44:53,099 127.0.0.1 - - [20/Dec/2024 11:44:53] "GET /static/sample_frames/A%20Couple%20of%20Cuckoos%201/877.jpg HTTP/1.1" 200 -
+2024-12-20 11:44:53,110 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/static/site_images/background.jpg, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-20 11:44:53,112 127.0.0.1 - - [20/Dec/2024 11:44:53] "[36mGET /static/site_images/background.jpg HTTP/1.1[0m" 304 -
+2024-12-20 11:44:57,742 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-20 11:44:57,742 127.0.0.1 - - [20/Dec/2024 11:44:57] "GET / HTTP/1.1" 200 -
+2024-12-20 11:44:57,766 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/static/site_images/Levi.png, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-20 11:44:57,768 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/static/site_images/background.jpg, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-20 11:44:57,769 127.0.0.1 - - [20/Dec/2024 11:44:57] "[36mGET /static/site_images/Levi.png HTTP/1.1[0m" 304 -
+2024-12-20 11:44:57,769 127.0.0.1 - - [20/Dec/2024 11:44:57] "[36mGET /static/site_images/background.jpg HTTP/1.1[0m" 304 -
