@@ -30,3 +30,171 @@
 2024-12-20 11:44:57,768 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/static/site_images/background.jpg, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
 2024-12-20 11:44:57,769 127.0.0.1 - - [20/Dec/2024 11:44:57] "[36mGET /static/site_images/Levi.png HTTP/1.1[0m" 304 -
 2024-12-20 11:44:57,769 127.0.0.1 - - [20/Dec/2024 11:44:57] "[36mGET /static/site_images/background.jpg HTTP/1.1[0m" 304 -
+2024-12-21 19:48:20,134 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.74.14.231:8080
+2024-12-21 19:48:20,134 [33mPress CTRL+C to quit[0m
+2024-12-21 19:48:20,136  * Restarting with stat
+2024-12-21 19:48:26,338  * Debugger is active!
+2024-12-21 19:48:26,341  * Debugger PIN: 849-586-795
+2024-12-21 19:48:27,190 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:48:27,215 127.0.0.1 - - [21/Dec/2024 19:48:27] "GET / HTTP/1.1" 200 -
+2024-12-21 19:48:27,261 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/static/site_images/Levi.png, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:48:27,292 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/static/site_images/background.jpg, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:48:27,508 127.0.0.1 - - [21/Dec/2024 19:48:27] "GET /static/site_images/background.jpg HTTP/1.1" 200 -
+2024-12-21 19:48:27,509 127.0.0.1 - - [21/Dec/2024 19:48:27] "GET /static/site_images/Levi.png HTTP/1.1" 200 -
+2024-12-21 19:48:28,710 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/favicon.ico, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:48:28,734 127.0.0.1 - - [21/Dec/2024 19:48:28] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-12-21 19:48:35,748 IP: 127.0.0.1, Method: POST, URL: http://127.0.0.1:8080/upload, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:48:38,013 127.0.0.1 - - [21/Dec/2024 19:48:38] "POST /upload HTTP/1.1" 200 -
+2024-12-21 19:48:38,039 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/static/site_images/background.jpg, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:48:38,040 127.0.0.1 - - [21/Dec/2024 19:48:38] "[36mGET /static/site_images/background.jpg HTTP/1.1[0m" 304 -
+2024-12-21 19:48:38,888 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/favicon.ico, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:48:38,890 127.0.0.1 - - [21/Dec/2024 19:48:38] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-12-21 19:48:44,724 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:48:44,725 127.0.0.1 - - [21/Dec/2024 19:48:44] "GET / HTTP/1.1" 200 -
+2024-12-21 19:48:44,755 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/static/site_images/Levi.png, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:48:44,756 127.0.0.1 - - [21/Dec/2024 19:48:44] "[36mGET /static/site_images/Levi.png HTTP/1.1[0m" 304 -
+2024-12-21 19:48:44,756 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/static/site_images/background.jpg, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:48:44,757 127.0.0.1 - - [21/Dec/2024 19:48:44] "[36mGET /static/site_images/background.jpg HTTP/1.1[0m" 304 -
+2024-12-21 19:48:44,801 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/favicon.ico, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:48:44,802 127.0.0.1 - - [21/Dec/2024 19:48:44] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-12-21 19:48:49,366 IP: 127.0.0.1, Method: POST, URL: http://127.0.0.1:8080/upload, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:48:50,977 127.0.0.1 - - [21/Dec/2024 19:48:50] "POST /upload HTTP/1.1" 200 -
+2024-12-21 19:48:51,008 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/static/site_images/background.jpg, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:48:51,009 127.0.0.1 - - [21/Dec/2024 19:48:51] "[36mGET /static/site_images/background.jpg HTTP/1.1[0m" 304 -
+2024-12-21 19:48:56,452 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:48:56,452 127.0.0.1 - - [21/Dec/2024 19:48:56] "GET / HTTP/1.1" 200 -
+2024-12-21 19:48:56,478 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/static/site_images/Levi.png, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:48:56,479 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/static/site_images/background.jpg, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:48:56,481 127.0.0.1 - - [21/Dec/2024 19:48:56] "[36mGET /static/site_images/Levi.png HTTP/1.1[0m" 304 -
+2024-12-21 19:48:56,481 127.0.0.1 - - [21/Dec/2024 19:48:56] "[36mGET /static/site_images/background.jpg HTTP/1.1[0m" 304 -
+2024-12-21 19:48:56,534 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/favicon.ico, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:48:56,535 127.0.0.1 - - [21/Dec/2024 19:48:56] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-12-21 19:49:00,228 IP: 127.0.0.1, Method: POST, URL: http://127.0.0.1:8080/upload, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:49:01,911 127.0.0.1 - - [21/Dec/2024 19:49:01] "POST /upload HTTP/1.1" 200 -
+2024-12-21 19:49:01,941 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/static/site_images/background.jpg, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:49:01,942 127.0.0.1 - - [21/Dec/2024 19:49:01] "[36mGET /static/site_images/background.jpg HTTP/1.1[0m" 304 -
+2024-12-21 19:49:07,647 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/favicon.ico, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:49:07,648 127.0.0.1 - - [21/Dec/2024 19:49:07] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-12-21 19:49:10,516 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:49:10,517 127.0.0.1 - - [21/Dec/2024 19:49:10] "GET / HTTP/1.1" 200 -
+2024-12-21 19:49:10,545 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/static/site_images/Levi.png, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:49:10,547 127.0.0.1 - - [21/Dec/2024 19:49:10] "[36mGET /static/site_images/Levi.png HTTP/1.1[0m" 304 -
+2024-12-21 19:49:10,547 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/static/site_images/background.jpg, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:49:10,548 127.0.0.1 - - [21/Dec/2024 19:49:10] "[36mGET /static/site_images/background.jpg HTTP/1.1[0m" 304 -
+2024-12-21 19:49:10,593 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/favicon.ico, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:49:10,594 127.0.0.1 - - [21/Dec/2024 19:49:10] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-12-21 19:49:14,326 IP: 127.0.0.1, Method: POST, URL: http://127.0.0.1:8080/upload, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:49:15,928 127.0.0.1 - - [21/Dec/2024 19:49:15] "POST /upload HTTP/1.1" 200 -
+2024-12-21 19:49:15,951 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/static/site_images/background.jpg, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:49:15,952 127.0.0.1 - - [21/Dec/2024 19:49:15] "[36mGET /static/site_images/background.jpg HTTP/1.1[0m" 304 -
+2024-12-21 19:49:16,247 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/favicon.ico, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:49:16,248 127.0.0.1 - - [21/Dec/2024 19:49:16] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-12-21 19:49:22,873 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:49:22,874 127.0.0.1 - - [21/Dec/2024 19:49:22] "GET / HTTP/1.1" 200 -
+2024-12-21 19:49:22,897 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/static/site_images/Levi.png, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:49:22,898 127.0.0.1 - - [21/Dec/2024 19:49:22] "[36mGET /static/site_images/Levi.png HTTP/1.1[0m" 304 -
+2024-12-21 19:49:22,900 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/static/site_images/background.jpg, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:49:22,902 127.0.0.1 - - [21/Dec/2024 19:49:22] "[36mGET /static/site_images/background.jpg HTTP/1.1[0m" 304 -
+2024-12-21 19:49:22,949 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/favicon.ico, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:49:22,950 127.0.0.1 - - [21/Dec/2024 19:49:22] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-12-21 19:49:26,797 IP: 127.0.0.1, Method: POST, URL: http://127.0.0.1:8080/upload, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:49:28,302 127.0.0.1 - - [21/Dec/2024 19:49:28] "POST /upload HTTP/1.1" 200 -
+2024-12-21 19:49:28,329 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/static/site_images/background.jpg, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:49:28,330 127.0.0.1 - - [21/Dec/2024 19:49:28] "[36mGET /static/site_images/background.jpg HTTP/1.1[0m" 304 -
+2024-12-21 19:49:28,628 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/favicon.ico, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:49:28,628 127.0.0.1 - - [21/Dec/2024 19:49:28] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-12-21 19:49:34,615 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:49:34,615 127.0.0.1 - - [21/Dec/2024 19:49:34] "GET / HTTP/1.1" 200 -
+2024-12-21 19:49:34,638 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/static/site_images/Levi.png, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:49:34,639 127.0.0.1 - - [21/Dec/2024 19:49:34] "[36mGET /static/site_images/Levi.png HTTP/1.1[0m" 304 -
+2024-12-21 19:49:34,641 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/static/site_images/background.jpg, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:49:34,644 127.0.0.1 - - [21/Dec/2024 19:49:34] "[36mGET /static/site_images/background.jpg HTTP/1.1[0m" 304 -
+2024-12-21 19:49:34,691 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/favicon.ico, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:49:34,692 127.0.0.1 - - [21/Dec/2024 19:49:34] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-12-21 19:49:38,635 IP: 127.0.0.1, Method: POST, URL: http://127.0.0.1:8080/upload, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:49:40,192 127.0.0.1 - - [21/Dec/2024 19:49:40] "POST /upload HTTP/1.1" 200 -
+2024-12-21 19:49:40,223 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/static/site_images/background.jpg, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:49:40,224 127.0.0.1 - - [21/Dec/2024 19:49:40] "[36mGET /static/site_images/background.jpg HTTP/1.1[0m" 304 -
+2024-12-21 19:49:40,509 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/favicon.ico, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:49:40,511 127.0.0.1 - - [21/Dec/2024 19:49:40] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-12-21 19:49:45,265 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:49:45,266 127.0.0.1 - - [21/Dec/2024 19:49:45] "GET / HTTP/1.1" 200 -
+2024-12-21 19:49:45,294 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/static/site_images/Levi.png, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:49:45,295 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/static/site_images/background.jpg, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:49:45,296 127.0.0.1 - - [21/Dec/2024 19:49:45] "[36mGET /static/site_images/Levi.png HTTP/1.1[0m" 304 -
+2024-12-21 19:49:45,297 127.0.0.1 - - [21/Dec/2024 19:49:45] "[36mGET /static/site_images/background.jpg HTTP/1.1[0m" 304 -
+2024-12-21 19:49:45,343 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/favicon.ico, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:49:45,344 127.0.0.1 - - [21/Dec/2024 19:49:45] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-12-21 19:49:48,350 IP: 127.0.0.1, Method: POST, URL: http://127.0.0.1:8080/upload, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:49:50,013 127.0.0.1 - - [21/Dec/2024 19:49:50] "POST /upload HTTP/1.1" 200 -
+2024-12-21 19:49:50,041 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/static/site_images/background.jpg, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:49:50,042 127.0.0.1 - - [21/Dec/2024 19:49:50] "[36mGET /static/site_images/background.jpg HTTP/1.1[0m" 304 -
+2024-12-21 19:49:50,323 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/favicon.ico, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:49:50,324 127.0.0.1 - - [21/Dec/2024 19:49:50] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-12-21 19:49:54,826 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:49:54,827 127.0.0.1 - - [21/Dec/2024 19:49:54] "GET / HTTP/1.1" 200 -
+2024-12-21 19:49:54,854 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/static/site_images/Levi.png, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:49:54,855 127.0.0.1 - - [21/Dec/2024 19:49:54] "[36mGET /static/site_images/Levi.png HTTP/1.1[0m" 304 -
+2024-12-21 19:49:54,856 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/static/site_images/background.jpg, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:49:54,857 127.0.0.1 - - [21/Dec/2024 19:49:54] "[36mGET /static/site_images/background.jpg HTTP/1.1[0m" 304 -
+2024-12-21 19:49:54,900 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/favicon.ico, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:49:54,901 127.0.0.1 - - [21/Dec/2024 19:49:54] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-12-21 19:49:59,060 IP: 127.0.0.1, Method: POST, URL: http://127.0.0.1:8080/upload, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:50:00,623 127.0.0.1 - - [21/Dec/2024 19:50:00] "POST /upload HTTP/1.1" 200 -
+2024-12-21 19:50:00,650 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/static/site_images/background.jpg, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:50:00,651 127.0.0.1 - - [21/Dec/2024 19:50:00] "[36mGET /static/site_images/background.jpg HTTP/1.1[0m" 304 -
+2024-12-21 19:50:00,999 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/favicon.ico, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:50:01,000 127.0.0.1 - - [21/Dec/2024 19:50:01] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-12-21 19:50:06,461 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:50:06,462 127.0.0.1 - - [21/Dec/2024 19:50:06] "GET / HTTP/1.1" 200 -
+2024-12-21 19:50:06,488 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/static/site_images/Levi.png, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:50:06,489 127.0.0.1 - - [21/Dec/2024 19:50:06] "[36mGET /static/site_images/Levi.png HTTP/1.1[0m" 304 -
+2024-12-21 19:50:06,490 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/static/site_images/background.jpg, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:50:06,491 127.0.0.1 - - [21/Dec/2024 19:50:06] "[36mGET /static/site_images/background.jpg HTTP/1.1[0m" 304 -
+2024-12-21 19:50:06,666 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/favicon.ico, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:50:06,667 127.0.0.1 - - [21/Dec/2024 19:50:06] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-12-21 19:50:10,339 IP: 127.0.0.1, Method: POST, URL: http://127.0.0.1:8080/upload, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:50:11,787 127.0.0.1 - - [21/Dec/2024 19:50:11] "POST /upload HTTP/1.1" 200 -
+2024-12-21 19:50:11,819 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/static/site_images/background.jpg, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:50:11,820 127.0.0.1 - - [21/Dec/2024 19:50:11] "[36mGET /static/site_images/background.jpg HTTP/1.1[0m" 304 -
+2024-12-21 19:50:11,864 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/favicon.ico, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:50:11,864 127.0.0.1 - - [21/Dec/2024 19:50:11] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-12-21 19:50:19,003 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:50:19,004 127.0.0.1 - - [21/Dec/2024 19:50:19] "GET / HTTP/1.1" 200 -
+2024-12-21 19:50:19,030 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/static/site_images/Levi.png, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:50:19,031 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/static/site_images/background.jpg, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:50:19,032 127.0.0.1 - - [21/Dec/2024 19:50:19] "[36mGET /static/site_images/Levi.png HTTP/1.1[0m" 304 -
+2024-12-21 19:50:19,033 127.0.0.1 - - [21/Dec/2024 19:50:19] "[36mGET /static/site_images/background.jpg HTTP/1.1[0m" 304 -
+2024-12-21 19:50:19,076 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/favicon.ico, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:50:19,077 127.0.0.1 - - [21/Dec/2024 19:50:19] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-12-21 19:50:24,051 IP: 127.0.0.1, Method: POST, URL: http://127.0.0.1:8080/upload, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:50:26,153 127.0.0.1 - - [21/Dec/2024 19:50:26] "POST /upload HTTP/1.1" 200 -
+2024-12-21 19:50:26,184 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/static/site_images/background.jpg, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:50:26,185 127.0.0.1 - - [21/Dec/2024 19:50:26] "[36mGET /static/site_images/background.jpg HTTP/1.1[0m" 304 -
+2024-12-21 19:50:26,414 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/favicon.ico, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:50:26,415 127.0.0.1 - - [21/Dec/2024 19:50:26] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-12-21 19:50:30,664 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:50:30,665 127.0.0.1 - - [21/Dec/2024 19:50:30] "GET / HTTP/1.1" 200 -
+2024-12-21 19:50:30,692 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/static/site_images/Levi.png, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:50:30,693 127.0.0.1 - - [21/Dec/2024 19:50:30] "[36mGET /static/site_images/Levi.png HTTP/1.1[0m" 304 -
+2024-12-21 19:50:30,694 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/static/site_images/background.jpg, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:50:30,695 127.0.0.1 - - [21/Dec/2024 19:50:30] "[36mGET /static/site_images/background.jpg HTTP/1.1[0m" 304 -
+2024-12-21 19:50:30,739 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/favicon.ico, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:50:30,740 127.0.0.1 - - [21/Dec/2024 19:50:30] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-12-21 19:50:35,373 IP: 127.0.0.1, Method: POST, URL: http://127.0.0.1:8080/upload, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:50:37,148 127.0.0.1 - - [21/Dec/2024 19:50:37] "POST /upload HTTP/1.1" 200 -
+2024-12-21 19:50:37,181 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/static/site_images/background.jpg, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:50:37,183 127.0.0.1 - - [21/Dec/2024 19:50:37] "[36mGET /static/site_images/background.jpg HTTP/1.1[0m" 304 -
+2024-12-21 19:50:37,482 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/favicon.ico, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:50:37,483 127.0.0.1 - - [21/Dec/2024 19:50:37] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2024-12-21 19:50:41,487 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:50:41,488 127.0.0.1 - - [21/Dec/2024 19:50:41] "GET / HTTP/1.1" 200 -
+2024-12-21 19:50:41,514 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/static/site_images/Levi.png, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:50:41,515 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/static/site_images/background.jpg, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:50:41,516 127.0.0.1 - - [21/Dec/2024 19:50:41] "[36mGET /static/site_images/Levi.png HTTP/1.1[0m" 304 -
+2024-12-21 19:50:41,517 127.0.0.1 - - [21/Dec/2024 19:50:41] "[36mGET /static/site_images/background.jpg HTTP/1.1[0m" 304 -
+2024-12-21 19:50:41,562 IP: 127.0.0.1, Method: GET, URL: http://127.0.0.1:8080/favicon.ico, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+2024-12-21 19:50:41,563 127.0.0.1 - - [21/Dec/2024 19:50:41] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -

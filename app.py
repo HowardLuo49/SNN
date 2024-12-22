@@ -25,7 +25,7 @@ def handle_exception(error):
 app.config['UPLOAD_FOLDER'] = 'uploads'
 
 # Load the trained model
-model = tf.keras.models.load_model("models/epoch-05_189.keras")
+model = tf.keras.models.load_model("models/epoch-12_189.keras")
 
 # Define image dimensions
 IMG_HEIGHT = 360
