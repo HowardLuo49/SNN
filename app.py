@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, redirect, url_for
+from flask import Flask, request, render_template, redirect, url_for, session, flash
 from werkzeug.utils import secure_filename
 from shlex import quote
 import tensorflow as tf
@@ -11,6 +11,8 @@ import logging
 
 # Initialize Flask app
 app = Flask(__name__)
+
+app.secret_key = 'Prajit-Is-A-Poop'
 
 logging.basicConfig(
     filename='access.log',          # Log file name
@@ -33,7 +35,29 @@ IMG_WIDTH = 640
 
 with open("static/titles.txt", "r") as file:
     titles_list = [line.strip() for line in file if line.strip()]
+    cleaned_titles_list = [title[:-2] for title in titles_list]
 
+
+
+
+
+
+@app.route('/select_anime', methods=['GET'])
+def select_anime():
+    # List of all available anime (titles can come from a file or database)
+    all_anime = titles_list
+    
+    # Retrieve user's previously selected anime
+    selected_anime = session.get('selected_anime', [])  # Using session for persistence
+    
+    return render_template('select_anime.html', all_anime=all_anime, selected_anime=selected_anime)
+
+@app.route('/save_anime_selection', methods=['POST'])
+def save_anime_selection():
+    selected_anime = request.form.getlist('anime')  # Get selected anime titles
+    session['selected_anime'] = selected_anime  # Save to session for persistence
+    flash("Your selection has been saved!", "success")
+    return redirect(url_for('index'))
 
 @app.route('/play_3/result', methods=['POST'])
 def play_3_result():
@@ -73,20 +97,21 @@ def play_3_result():
 def play_3():
     sample_frames_dir = os.path.join(app.root_path, "static/sample_frames")
 
-    # Load the list of titles from `titles.txt`
-    titles_file = "static/titles.txt"
-    with open(titles_file, "r") as file:
-        titles_list = [line.strip() for line in file if line.strip()]
-
     # Select a random anime title
-    correct_title = random.choice(titles_list)
+    selected_anime = session.get('selected_anime', [])
+    if not selected_anime:
+        selected_anime = titles_list
+    correct_title = random.choice(selected_anime)
 
     # Find a correct frame for the selected title
     correct_dir = os.path.join(sample_frames_dir, correct_title)
     correct_frame = random.choice(os.listdir(correct_dir))
 
+    if len(selected_anime) < 6:
+        return render_template('error_insufficient_anime.html', message="Not enough anime selected.")
+
     # Select 5 incorrect frames from other titles
-    incorrect_titles = [title for title in titles_list if title != correct_title]
+    incorrect_titles = [title for title in selected_anime if title != correct_title]
     incorrect_frames = []
     for title in random.sample(incorrect_titles, 5):
         incorrect_dir = os.path.join(sample_frames_dir, title)
@@ -103,8 +128,17 @@ def play_3():
 def play_2():
     sample_frames_dir = os.path.join(app.root_path, "static/sample_frames")
 
+    selected_anime = session.get('selected_anime', [])
+    if not selected_anime:
+        selected_anime = titles_list
+
+    available_anime = [anime for anime in os.listdir(sample_frames_dir) if anime in selected_anime]
+
+    if len(available_anime) < 6:
+        return render_template('error_insufficient_anime.html', message="Not enough anime selected.")
+
     # Select 6 distinct anime
-    anime_folders = random.sample(os.listdir(sample_frames_dir), 6)
+    anime_folders = random.sample(available_anime, 6)
 
     # Select one image pair from each anime
     grid_images = []
@@ -126,14 +160,17 @@ def play_2_result():
 @app.route('/play_1', methods=['GET'])
 def play_1():
     # Randomly select an anime and an image
-    anime = random.choice(titles_list)
+    selected_anime = session.get('selected_anime', [])
+    if not selected_anime:
+        selected_anime = titles_list
+
+    anime = random.choice(selected_anime)
     sample_frames_dir = os.path.join(app.static_folder, "sample_frames")
     anime_dir = os.path.join(sample_frames_dir, anime)
-    # print(f"Anime directory path: {anime_dir}")
     image_file = random.choice(os.listdir(anime_dir))
     image_path = f"sample_frames/{anime}/{image_file}"
 
-    cleaned_titles_list = [title[:-2] for title in titles_list]
+    cleaned_titles_list = [title[:-2] for title in selected_anime]
     
     # Render the play page
     return render_template('play_1.html', image_path=image_path, titles_list=cleaned_titles_list, correct_title=anime[:-2])
@@ -188,7 +225,8 @@ def preprocess_image(image_path):
 @app.route('/')
 def index():
     # Render the HTML template for uploading images
-    return render_template('index.html')
+    selected_anime = session.get('selected_anime', [])
+    return render_template('index.html', selected_anime=selected_anime)
 
 def fetch_anime_details(title):
     """Fetch anime details from MAL API based on the title."""

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            /* background-color: #f4f4f9; */
+            background: url('/static/site_images/background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #d9534f;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            background-color: #0275d8;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        a:hover {
+            background-color: #025aa5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Error</h1>
+        <p>{{ message }}</p>
+        <a href="/">Go Back to Home Page</a>
+    </div>
+</body>
+</html>

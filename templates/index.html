@@ -26,14 +26,14 @@
             <details>
                 <summary>Training</summary>
                 <p>
-                    The model is trained on a large dataset of anime frames for classification tasks. It outputs the top 5 predictions for each image.
+                    The model is trained for this classification task using a few thousand images corresponding to each anime. The top 5 results (and some associated details) will be displayed.
                 </p>
             </details>
 
             <details>
                 <summary>Neural Network Architecture</summary>
                 <p>
-                    Our architecture is a deep convolutional neural network optimized for anime classification tasks.
+                    Classified
                 </p>
             </details>
         
@@ -66,6 +66,23 @@
         </div>
         <!-- Games Section -->
         <div class="games">
+            <div class="anime-selector">
+                <h3>Select Anime</h3>
+                <p>Select which anime you've seen so you only get those in games.</p>
+                <a href="{{ url_for('select_anime') }}" class="select-anime-btn">Select Anime</a>
+                <div class="selected-anime-list">
+                    <h4>Currently Selected Anime:</h4>
+                    {% if selected_anime %}
+                        <select id="selected-anime-dropdown" size="5">
+                            {% for anime in selected_anime %}
+                                <option value="{{ anime }}">{{ anime[:-2] }}</option>
+                            {% endfor %}
+                        </select>
+                    {% else %}
+                        <p>No anime selected yet.</p>
+                    {% endif %}
+                </div>                
+            </div>
             <div class="game-card">
                 <h3>Title Guessing Game</h3>
                 <p>Match an image to the correct anime title. Compete against the neural network!</p>
