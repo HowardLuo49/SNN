@@ -3,134 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Upload</title>
-    <style>
-        /* Reset default styles */
-        body, h1, form {
-            margin: 0;
-            padding: 0;
-        }
-
-        /* Apply a nice background and center everything */
-        body {
-            font-family: Arial, sans-serif;
-            /* background-color: #f4f4f9; */
-            background: url('/static/site_images/background.jpg') no-repeat center center fixed;
-            background-size: cover;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-        }
-
-        /* Card-like container for the form */
-        .container {
-            background: #ffffff;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            border-radius: 8px;
-            width: 90%;
-            max-width: 400px;
-            text-align: center;
-        }
-
-        /* Header styling */
-        h1 {
-            font-size: 1.8rem;
-            color: #333333;
-            margin-bottom: 20px;
-        }
-
-        /* Image styling */
-        .container img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
-
-        /* Input field for the file */
-        input[type="file"] {
-            margin-bottom: 20px;
-            font-size: 1rem;
-            padding: 10px;
-        }
-
-        /* Upload button */
-        button {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            font-size: 1rem;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        button:hover {
-            background-color: #45a049;
-        }
-
-        /* Responsive design */
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 1.5rem;
-            }
-
-            button {
-                font-size: 0.9rem;
-                padding: 8px 16px;
-            }
-        }
-    </style>
+    <title>Nerual Network Anime Searcher</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
 </head>
 <body>
-    <div class="container">
-        <!-- Display an image -->
-        <img src="/static/site_images/Levi.png" alt="Upload Example">
-
-        <h1>Upload Your Image</h1>
-        
-        <form action="/upload" method="post" enctype="multipart/form-data">
-            <input type="file" name="file" accept="image/*">
-            <br>
-            <button type="submit">Submit</button>
-        </form>
+    <div class="title-bar">
+        <h1>Nerual Network Anime Searcher</h1>
     </div>
+    <div class="grid-container">
+        <!-- Left-side description -->
+        <div class="description">
+            <p>
+                Welcome! <br><br>
+                Feel Free to:
+            </p>
+            <ul>
+                <li>Use the widget in the center to search an anime image's source</li>
+                <li>Experiment with the neural network's strengths/weaknesses</li>
+                <li>Compete with the neural network in games on the right</li>
+            </ul>
+        
+            <details>
+                <summary>Training</summary>
+                <p>
+                    The model is trained on a large dataset of anime frames for classification tasks. It outputs the top 5 predictions for each image.
+                </p>
+            </details>
 
-    <a href="{{ url_for('play_1') }}" style="
-    position: absolute; 
-    top: 10px; 
-    right: 10px; 
-    text-decoration: none; 
-    background-color: #2196F3; 
-    color: white; 
-    padding: 10px 20px; 
-    border-radius: 5px; 
-    font-size: 1.2em;">Title Guessing Game</a>
+            <details>
+                <summary>Neural Network Architecture</summary>
+                <p>
+                    Our architecture is a deep convolutional neural network optimized for anime classification tasks.
+                </p>
+            </details>
+        
+            <details>
+                <summary>FAQ</summary>
+                <p>
+                    No one's asked any questions yet so idk
+                </p>
+            </details>
 
-    <a href="{{ url_for('play_2') }}" style="
-    position: absolute; 
-    top: 60px; 
-    right: 10px; 
-    text-decoration: none; 
-    background-color: #2196F3; 
-    color: white; 
-    padding: 10px 20px; 
-    border-radius: 5px; 
-    font-size: 1.2em;">Matching Game</a>
+            <details>
+                <summary>Contact the Creator</summary>
+                <p>
+                    howardluo2021@gmail.com
+                </p>
+            </details>
+        </div>        
+        <!-- Centered main box -->
+        <div class="container">
+            <!-- Display an image -->
+            <img src="/static/site_images/Levi.png" alt="Upload Example">
 
-    <a href="{{ url_for('play_3') }}" style="
-    position: absolute; 
-    top: 110px; 
-    right: 10px; 
-    text-decoration: none; 
-    background-color: #2196F3; 
-    color: white; 
-    padding: 10px 20px; 
-    border-radius: 5px; 
-    font-size: 1.2em;">Frame Guessing Game</a>
+            <h2>Upload Your Image</h2>
+            
+            <form action="/upload" method="post" enctype="multipart/form-data">
+                <input type="file" name="file" accept="image/*">
+                <br>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <!-- Games Section -->
+        <div class="games">
+            <div class="game-card">
+                <h3>Title Guessing Game</h3>
+                <p>Match an image to the correct anime title. Compete against the neural network!</p>
+                <a href="{{ url_for('play_1') }}">Play Now</a>
+            </div>
+            <div class="game-card">
+                <h3>Matching Game</h3>
+                <p>Find pairs of frames from the same anime within a grid. Time yourself!</p>
+                <a href="{{ url_for('play_2') }}">Play Now</a>
+            </div>
+            <div class="game-card">
+                <h3>Frame Guessing Game</h3>
+                <p>Given an anime title, select the correct frame from six options.</p>
+                <a href="{{ url_for('play_3') }}">Play Now</a>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
