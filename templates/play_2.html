@@ -4,72 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matching Game</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            /* background-color: #f4f4f9; */
-            background: url('/static/site_images/background.jpg') no-repeat center center fixed;
-            background-size: cover;
-            color: #333;
-            padding: 20px;
-        }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr); /* 4 columns */
-            gap: 10px;
-            max-width: 1300px; /* 4 cards at 320px each, plus gaps */
-            margin: 0 auto; /* Centers the grid horizontally */
-            position: absolute;
-            top: 60%; /* Move the grid's top edge to the vertical center */
-            left: 50%; /* Move the grid's left edge to the horizontal center */
-            transform: translate(-50%, -50%); /* Offset the grid to center it perfectly */
-        }
-        .card {
-            width: 320px; /* Match IMG_WIDTH */
-            height: 180px; /* Match IMG_HEIGHT */
-            position: relative;
-            border: 2px solid #ccc;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
-        .card img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 320px; /* Set width to IMG_WIDTH */
-            height: 180px; /* Set height to IMG_HEIGHT */
-            object-fit: cover;
-            border-radius: 8px;
-        }
-        .timer {
-            font-size: 1.5em;
-            margin-bottom: 20px;
-        }
-        .controls {
-            margin: 20px 0;
-        }
-        button {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            font-size: 1em;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            margin: 10px;
-        }
-        button:hover {
-            background-color: #45a049;
-        }
-        .quit {
-            background-color: #f44336; /* Red color for quit */
-        }
-        .quit:hover {
-            background-color: #d32f2f;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/play_games.css') }}">
 </head>
 <body>
     <h1>Matching Game</h1>
@@ -82,7 +17,7 @@
     </div>
 
     <!-- Grid -->
-    <div class="grid">
+    <div class="grid matching-game">
         {% for image in grid_images %}
         <div class="card" onclick="flipCard(this)">
             <img src="{{ url_for('static', filename=image) }}" alt="Card" hidden>
@@ -90,73 +25,7 @@
         {% endfor %}
     </div>
 
-    <script>
-        let startTime = Date.now();
-        let flippedCards = [];
-        let matchedPairs = 0;
-        const matchedCards = new Set(); // Track matched cards
+    <script src="{{ url_for('static', filename='js/play_2.js') }}"></script>
 
-        // Update timer
-        setInterval(() => {
-            const elapsed = Math.floor((Date.now() - startTime) / 1000);
-            document.getElementById('timer').textContent = elapsed;
-        }, 1000);
-
-        // Extract anime name from image src
-        function getAnimeNameFromSrc(src) {
-            const parts = src.split('/');
-            const animeDir = parts.slice(-2, -1)[0]; // Get the second-to-last part
-            return decodeURIComponent(animeDir); // Decode %20 to spaces
-        }
-
-        // Flip card logic
-        function flipCard(card) {
-            const img = card.querySelector('img');
-
-            // Prevent interaction with already matched cards or more than 2 flips
-            if (img.hidden && flippedCards.length < 2 && !matchedCards.has(card)) {
-                img.hidden = false; // Show the card
-                flippedCards.push(card);
-
-                // Check for match
-                if (flippedCards.length === 2) {
-                    const [first, second] = flippedCards;
-                    const firstAnime = getAnimeNameFromSrc(first.querySelector('img').src);
-                    const secondAnime = getAnimeNameFromSrc(second.querySelector('img').src);
-
-                    if (firstAnime === secondAnime) {
-                        // Match found: Add to matchedCards set
-                        matchedCards.add(first);
-                        matchedCards.add(second);
-                        flippedCards = []; // Reset flipped cards
-                        matchedPairs++;
-
-                        // Check if all pairs are matched
-                        if (matchedPairs === 6) { // 6 pairs to match
-                            const elapsedTime = Math.floor((Date.now() - startTime) / 1000);
-                            window.location.href = `/play_2/result?time=${elapsedTime}`;
-                        }
-                    } else {
-                        // Not a match: Flip back after a delay
-                        setTimeout(() => {
-                            first.querySelector('img').hidden = true;
-                            second.querySelector('img').hidden = true;
-                            flippedCards = []; // Reset flipped cards
-                        }, 1000);
-                    }
-                }
-            }
-        }
-
-        // Restart Game
-        function restartGame() {
-            window.location.reload();
-        }
-
-        // Quit Game
-        function quitGame() {
-            window.location.href = '/';
-        }
-    </script>
 </body>
 </html>
