@@ -1,4 +1,4 @@
 *.keras
 /static/sample_frames/
-*.log
+access.log
 /uploads/
