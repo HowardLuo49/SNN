@@ -7,8 +7,8 @@ h1, form {
 html, body {
     margin: 0;
     padding: 0;
-    height: 100%; /* Ensure the page uses the full height of the viewport */
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    height: 100%;
+    overflow-x: hidden;
 }
 
 /* Apply a background */
@@ -35,10 +35,10 @@ body {
 /* Grid Layout */
 .grid-container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr; /* Divide page into thirds */
+    grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
     justify-items: center;
-    height: 100%; /* Ensure the grid takes up the full height */
+    height: 100%;
     padding: 20px;
     gap: 20px;
 }
@@ -66,12 +66,12 @@ body {
 
 /* Main Box */
 .container {
-    background: #ffffff;
+    background: rgba(255, 255, 255, 0.8);
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     padding: 20px;
     border-radius: 8px;
     width: 90%;
-    max-width: 400px;
+    max-width: 500px;
     text-align: center;
 }
 
@@ -133,7 +133,7 @@ button:hover {
 /* Responsive Design */
 @media (max-width: 768px) {
     .grid-container {
-        grid-template-columns: 1fr; /* Stack all items vertically */
+        grid-template-columns: 1fr;
         text-align: center;
     }
     .description {
@@ -154,7 +154,7 @@ details {
 }
 
 details[open] {
-    background-color: rgba(240, 240, 240, 1); /* Slightly darker when open */
+    background-color: rgba(240, 240, 240, 1);
 }
 
 details summary {
@@ -263,7 +263,7 @@ details p {
 /* Anime Selector Button */
 .select-anime-btn {
     display: inline-block;
-    background-color: #f39c12; /* Distinct orange color */
+    background-color: #f39c12;
     color: white;
     padding: 10px 20px;
     text-align: center;
@@ -276,13 +276,13 @@ details p {
 }
 
 .select-anime-btn:hover {
-    background-color: #d35400; /* Darker orange on hover */
+    background-color: #d35400;
 }
 
 /* Dropdown Styles */
 #selected-anime-dropdown {
-    width: 100%; /* Adjust width to fit container */
-    max-width: 400px; /* Limit the width */
+    width: 100%;
+    max-width: 400px;
     padding: 5px;
     font-size: 1rem;
     border: 1px solid #ccc;
@@ -290,11 +290,11 @@ details p {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     background-color: #fff;
     color: #333;
-    overflow-y: auto; /* Allow scrolling for long lists */
+    overflow-y: auto;
 }
 
 #selected-anime-dropdown:focus {
-    border-color: #4CAF50; /* Highlight border on focus */
+    border-color: #4CAF50;
     outline: none;
     box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
 }

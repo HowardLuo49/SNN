@@ -1,7 +1,7 @@
 let startTime = Date.now();
 let flippedCards = [];
 let matchedPairs = 0;
-const matchedCards = new Set(); // Track matched cards
+const matchedCards = new Set();
 
 // Update timer
 setInterval(() => {
@@ -12,8 +12,8 @@ setInterval(() => {
 // Extract anime name from image src
 function getAnimeNameFromSrc(src) {
     const parts = src.split('/');
-    const animeDir = parts.slice(-2, -1)[0]; // Get the second-to-last part
-    return decodeURIComponent(animeDir); // Decode %20 to spaces
+    const animeDir = parts.slice(-2, -1)[0];
+    return decodeURIComponent(animeDir);
 }
 
 // Flip card logic
@@ -35,11 +35,11 @@ function flipCard(card) {
                 // Match found: Add to matchedCards set
                 matchedCards.add(first);
                 matchedCards.add(second);
-                flippedCards = []; // Reset flipped cards
+                flippedCards = [];
                 matchedPairs++;
 
                 // Check if all pairs are matched
-                if (matchedPairs === 6) { // 6 pairs to match
+                if (matchedPairs === 6) {
                     const elapsedTime = Math.floor((Date.now() - startTime) / 1000);
                     window.location.href = `/play_2/result?time=${elapsedTime}`;
                 }
@@ -48,19 +48,17 @@ function flipCard(card) {
                 setTimeout(() => {
                     first.querySelector('img').hidden = true;
                     second.querySelector('img').hidden = true;
-                    flippedCards = []; // Reset flipped cards
+                    flippedCards = [];
                 }, 1000);
             }
         }
     }
 }
 
-// Restart Game
 function restartGame() {
     window.location.reload();
 }
 
-// Quit Game
 function quitGame() {
     window.location.href = '/';
 }

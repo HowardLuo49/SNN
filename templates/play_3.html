@@ -16,7 +16,6 @@
             <label>
                 <input type="radio" name="selected_frame" value="{{ frame }}" onchange="updateSelection(this)" hidden>
                 <img src="{{ url_for('static', filename=frame) }}" alt="Frame" class="frame">
-                <!-- Add a hidden input for each frame -->
                 <input type="hidden" name="frames" value="{{ frame }}">
             </label>
             {% endfor %}

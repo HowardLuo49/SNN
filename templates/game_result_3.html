@@ -8,7 +8,6 @@
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            /* background-color: #f4f4f9; */
             background: url('/static/site_images/background.jpg') no-repeat center center fixed;
             background-size: cover;
             color: #333;
@@ -20,7 +19,7 @@
             align-items: flex-start;
             gap: 20px;
             margin-top: 20px;
-            flex-wrap: wrap; /* Ensure responsiveness */
+            flex-wrap: wrap;
         }
         .result {
             flex: 1;
@@ -69,7 +68,6 @@
 <body>
     <h1>Game Result</h1>
 
-    <!-- Results Container -->
     <div class="results-container">
         <!-- Your Guess -->
         <div class="result">
@@ -93,7 +91,6 @@
         </div>
     </div>
 
-    <!-- Buttons -->
     <div class="buttons" style="display: flex; justify-content: center; gap: 10px;">
         <a href="/play_3">
             <button>Play Again</button>

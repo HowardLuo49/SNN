@@ -10,13 +10,11 @@
     <h1>Matching Game</h1>
     <div class="timer">Time: <span id="timer">0</span> seconds</div>
 
-    <!-- Controls -->
     <div class="controls">
         <button onclick="restartGame()">Restart Game</button>
         <button onclick="quitGame()" class="quit">Quit Game</button>
     </div>
 
-    <!-- Grid -->
     <div class="grid matching-game">
         {% for image in grid_images %}
         <div class="card" onclick="flipCard(this)">

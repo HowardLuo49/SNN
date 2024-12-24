@@ -8,7 +8,6 @@
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            /* background-color: #f4f4f9; */
             background: url('/static/site_images/background.jpg') no-repeat center center fixed;
             background-size: cover;
             color: #333;
@@ -51,7 +50,7 @@
             background-color: #45a049;
         }
         .quit {
-            background-color: #f44336; /* Red color for quit */
+            background-color: #f44336;
         }
         .quit:hover {
             background-color: #d32f2f;
@@ -73,12 +72,6 @@
     <div class="controls">
         <button onclick="quitGame()" class="quit">Quit Game</button>
     </div>
-
-    <script>
-        // Quit Game
-        function quitGame() {
-            window.location.href = '/';
-        }
-    </script>
+    <script src="{{ url_for('static', filename='js/play_1.js') }}"></script>
 </body>
 </html>
