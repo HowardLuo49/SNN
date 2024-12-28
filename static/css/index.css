@@ -20,7 +20,11 @@ body {
     margin: 0;
     display: flex;
     flex-direction: column;
+    cursor: url('/static/cursors/cursor_1_1.png'), auto;
 }
+/* a, a:hover {
+    cursor: url('/static/cursors/cursor_1_2.png'), pointer;
+} */
 
 /* Title Bar */
 .title-bar {
