@@ -36,6 +36,12 @@ with open("static/titles.txt", "r") as file:
 def handle_exception(error):
     return render_template('error_generic.html', error_message=str(error)), 500
 
+@app.errorhandler(413)
+def handle_large_file_error(error):
+    return render_template('error_generic.html', error_message="The uploaded file is too large. Please try again with a smaller file."), 413
+
+
+
 
 
 @app.route('/select_anime', methods=['GET'])
