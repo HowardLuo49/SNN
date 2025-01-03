@@ -22,9 +22,14 @@ body {
     flex-direction: column;
     cursor: url('/static/cursors/cursor_1_1.png'), auto;
 }
-/* a, a:hover {
+
+/* Custom Cursor */
+a, a:hover {
     cursor: url('/static/cursors/cursor_1_2.png'), pointer;
-} */
+}
+button, button:hover {
+    cursor: url('/static/cursors/cursor_1_2.png'), pointer;
+}
 
 /* Title Bar */
 .title-bar {

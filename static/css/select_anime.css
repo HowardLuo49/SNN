@@ -7,9 +7,14 @@ body {
     padding: 20px;
     cursor: url('/static/cursors/cursor_1_1.png'), auto;
 }
-/* a, a:hover {
+
+/* Custom Cursor */
+a, a:hover {
     cursor: url('/static/cursors/cursor_1_2.png'), pointer;
-} */
+}
+button, button:hover {
+    cursor: url('/static/cursors/cursor_1_2.png'), pointer;
+}
 
 .title-bar {
     text-align: center;

@@ -1,3 +1,11 @@
+/* Custom Cursor */
+a, a:hover {
+    cursor: url('/static/cursors/cursor_1_2.png'), pointer;
+}
+button, button:hover {
+    cursor: url('/static/cursors/cursor_1_2.png'), pointer;
+}
+
 body {
     font-family: Arial, sans-serif;
     text-align: center;
