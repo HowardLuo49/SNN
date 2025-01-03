@@ -20,7 +20,7 @@ logging.basicConfig(
 
 app.config['UPLOAD_FOLDER'] = 'uploads'
 
-model = tf.keras.models.load_model("models/epoch-12_189.keras")
+model = tf.keras.models.load_model("models/epoch-09-resnet50_189.keras")
 
 IMG_HEIGHT = 360
 IMG_WIDTH = 640
@@ -39,8 +39,6 @@ def handle_exception(error):
 @app.errorhandler(413)
 def handle_large_file_error(error):
     return render_template('error_generic.html', error_message="The uploaded file is too large. Please try again with a smaller file."), 413
-
-
 
 
 
