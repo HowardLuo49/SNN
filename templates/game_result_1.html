@@ -4,73 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Result</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background: url('/static/site_images/background.jpg') no-repeat center center fixed;
-            background-size: cover;
-            color: #333;
-            padding: 20px;
-        }
-        img {
-            max-width: 80%;
-            height: auto;
-            margin: 20px 0;
-        }
-        .result {
-            font-size: 1.5em;
-            margin: 20px 0;
-        }
-        a {
-            display: inline-block;
-            margin: 10px;
-            padding: 10px 20px;
-            text-decoration: none;
-            background-color: #4CAF50;
-            color: white;
-            border-radius: 5px;
-            font-size: 1.2em;
-        }
-        a:hover {
-            background-color: #45a049;
-        }
-        button {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            font-size: 1em;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            margin: 10px;
-        }
-        button:hover {
-            background-color: #45a049;
-        }
-        .quit {
-            background-color: #f44336;
-        }
-        .quit:hover {
-            background-color: #d32f2f;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/game_results.css') }}">
 </head>
 <body>
     <h1>Game Result</h1>
-    <img src="{{ url_for('static', filename=image_path) }}" alt="Sample Frame" style="width: 1000px; height: auto;">
+    <img src="{{ url_for('static', filename=image_path) }}" alt="Sample Frame" class="result-image">
     <div class="result">
         <p><strong>Correct Answer:</strong> {{ correct_title }}</p>
         <p><strong>Your Guess:</strong> {{ user_guess }}</p>
         <p><strong>Neural Network's Guess:</strong> {{ nn_guess }}</p>
-        <p><strong>You were {{ 'correct' if user_correct else 'wrong' }}</strong></p>
-        <p><strong>The Neural Network was {{ 'correct' if nn_correct else 'wrong' }}</strong></p>
+        <p class="highlight {{ 'correct' if user_correct else 'incorrect' }}">You were {{ 'correct' if user_correct else 'wrong' }}</p>
+        <p class="highlight {{ 'correct' if nn_correct else 'incorrect' }}">The Neural Network was {{ 'correct' if nn_correct else 'wrong' }}</p>
     </div>
-    <a href="{{ url_for('play_1') }}">Play Again</a>
-
-    <div class="controls">
-        <button onclick="quitGame()" class="quit">Quit Game</button>
+    <div class="buttons">
+        <a href="{{ url_for('play_1') }}" class="button">Play Again</a>
+        <a href="/" class="button">Back to Home</a>
     </div>
     <script src="{{ url_for('static', filename='js/play_1.js') }}"></script>
 </body>

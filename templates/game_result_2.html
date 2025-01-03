@@ -4,40 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Result</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background: url('/static/site_images/background.jpg') no-repeat center center fixed;
-            background-size: cover;
-            color: #333;
-            padding: 20px;
-        }
-        .result {
-            font-size: 1.5em;
-            margin-bottom: 20px;
-        }
-        a {
-            display: inline-block;
-            margin: 10px;
-            padding: 10px 20px;
-            text-decoration: none;
-            background-color: #4CAF50;
-            color: white;
-            border-radius: 5px;
-            font-size: 1.2em;
-        }
-        a:hover {
-            background-color: #45a049;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/game_results.css') }}">
 </head>
 <body>
     <h1>Game Result</h1>
     <div class="result">
         <p>You completed the game in <strong>{{ time_taken }}</strong> seconds!</p>
     </div>
-    <a href="/play_2">Play Again</a>
-    <a href="/">Go Back to Home</a>
+    <a href="/play_2" class="button">Play Again</a>
+    <a href="/" class="button">Go Back to Home</a>
 </body>
 </html>
