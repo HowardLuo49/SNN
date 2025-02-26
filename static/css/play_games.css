@@ -68,7 +68,7 @@ button:hover {
 
 .grid.matching-game {
     grid-template-columns: repeat(4, 1fr);
-    max-width: 1300px;
+    max-width: 90vw;
     position: absolute;
     top: 60%;
     left: 50%;
@@ -82,8 +82,8 @@ button:hover {
 
 /* Specific Styles for Cards */
 .card {
-    width: 320px;
-    height: 180px;
+    width: 20vw;
+    height: 20vh;
     position: relative;
     border: 2px solid #ccc;
     border-radius: 10px;
@@ -91,11 +91,11 @@ button:hover {
 }
 
 .card img {
+    width: 100%;
+    height: 100%;
     position: absolute;
     top: 0;
     left: 0;
-    width: 320px;
-    height: 180px;
     object-fit: cover;
     border-radius: 8px;
 }
