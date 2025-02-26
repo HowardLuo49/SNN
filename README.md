@@ -1,7 +1,5 @@
 # SNN
 
-Woke up Thanksgiving morning 2024 and thought this was a good idea...
-
 ## Main Functionality
 At the center of the page, the user may upload an image from any anime (or any image in general). A backend neural network will try to guess what show it is from. The top 5 neural network predictions will be shown, along with the confidence of the guesses and associated MAL information if available. Users can experiement with testing where the model excels, and where it struggles.
 
